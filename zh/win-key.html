@@ -1,0 +1,560 @@
+<!DOCTYPE html><html><head>
+      <title>通用批量许可证密钥 (GVLK)</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.16.9/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="通用批量许可证密钥-gvlk">通用批量许可证密钥 (GVLK) </h1>
+<p>在下表中，可找到 Windows 每个版本的 GVLK。 LTSC 是长期服务渠道，而 LTSB 是<code>Long-Term Servicing Branch</code>。</p>
+<h2 id="windows-11-和-windows-10半年频道版本">Windows 11 和 Windows 10（半年频道版本） </h2>
+<p>有关受支持的版本和服务终止日期的信息，请参阅 Windows 生命周期情况说明书。</p>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 11 专业版<br>Windows 10 专业版</td>
+<td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+</tr>
+<tr>
+<td>Windows 11 专业版 N<br>Windows 10 专业版 N</td>
+<td>MH37W-N47XK-V7XM9-C7227-GCQG9</td>
+</tr>
+<tr>
+<td>Windows 11 专业工作站版<br>Windows 10 专业工作站版</td>
+<td>NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</td>
+</tr>
+<tr>
+<td>Windows 11 专业工作站版 N<br>Windows 10 专业工作站版 N</td>
+<td>9FNHH-K3HBT-3W4TD-6383H-6XYWF</td>
+</tr>
+<tr>
+<td>Windows 11 专业教育版<br>Windows 10 专业教育版</td>
+<td>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</td>
+</tr>
+<tr>
+<td>Windows 11 专业教育版 N<br>Windows 10 专业教育版 N</td>
+<td>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</td>
+</tr>
+<tr>
+<td>Windows 11 教育版<br>Windows 10 教育版</td>
+<td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td>
+</tr>
+<tr>
+<td>Windows 11 教育版 N<br>Windows 10 教育版 N</td>
+<td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td>
+</tr>
+<tr>
+<td>Windows 11 企业版<br>Windows 10 企业版</td>
+<td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+</tr>
+<tr>
+<td>Windows 11 企业版 N<br>Windows 10 企业版 N</td>
+<td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td>
+</tr>
+<tr>
+<td>Windows 11 企业版 G<br>Windows 10 企业版 G</td>
+<td>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</td>
+</tr>
+<tr>
+<td>Windows 11 企业版 G N<br>Windows 10 企业版 G N</td>
+<td>44RPN-FTY23-9VTTB-MP9BX-T84FV</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-10ltscltsb-版本">Windows 10（LTSC/LTSB 版本） </h2>
+<h3 id="windows-10-ltsc-2021-和-2019">Windows 10 LTSC 2021 和 2019 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10 企业版 LTSC 2021<br>Windows 10 企业版 LTSC 2019</td>
+<td>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 N LTSC 2021<br>Windows 10 企业版 N LTSC 2019</td>
+<td>92NFX-8DJQP-P6BBQ-THF9C-7CG2H</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-10-ltsb-2016">Windows 10 LTSB 2016 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10 企业版 LTSB 2016</td>
+<td>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 N LTSB 2016</td>
+<td>QFFDN-GRT3P-VKWWX-X7T3R-8B639</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-10-ltsb-2015">Windows 10 LTSB 2015 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10 企业版 2015 LTSB</td>
+<td>WNMTR-4C88C-JK8YV-HQ7T2-76DF9</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 2015 LTSB N</td>
+<td>2F77B-TNFGY-69QQF-B8YKP-D69TJ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-server半年频道版本">Windows Server（半年频道版本） </h2>
+<h3 id="windows-server版本-20h2-2004-1909-1903-和-1809">Windows Server，版本 20H2、2004、1909、1903 和 1809 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server Datacenter</td>
+<td>6NMRW-2C8FM-D24W7-TQWMY-CWH2D</td>
+</tr>
+<tr>
+<td>Windows Server Standard</td>
+<td>N2KJX-J94YW-TQVFB-DG9YT-724CC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-serverltsc-版本">Windows Server（LTSC 版本） </h2>
+<h3 id="windows-server-2022">Windows Server 2022 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2022 Datacenter</td>
+<td>WX4NM-KYWYW-QJJR4-XV3QB-6VM33</td>
+</tr>
+<tr>
+<td>Windows Server 2022 Datacenter</td>
+<td></td>
+</tr>
+<tr>
+<td>Azure Edition	NTBV8-9K7Q8-V27C6-M2BTV-KHMXV</td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Server 2022 Standard</td>
+<td>VDYBN-27WPP-V4HQT-9VMD4-VMK7H</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-server-2019">Windows Server 2019 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2019 Datacenter</td>
+<td>WMDGN-G9PQG-XVVXX-R3X43-63DFG</td>
+</tr>
+<tr>
+<td>Windows Server 2019 Standard</td>
+<td>N69G4-B89J2-4G8F4-WWYCC-J464C</td>
+</tr>
+<tr>
+<td>Windows Server 2019 Essentials</td>
+<td>WVDHN-86M7X-466P6-VHXV7-YY726</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-server-2016">Windows Server 2016 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2016 Datacenter</td>
+<td>CB7KF-BWN84-R7R2Y-793K2-8XDDG</td>
+</tr>
+<tr>
+<td>Windows Server 2016 Standard</td>
+<td>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</td>
+</tr>
+<tr>
+<td>Windows Server 2016 Essentials</td>
+<td>JCKRF-N37P4-C2D82-9YXRT-4M63B</td>
+</tr>
+</tbody>
+</table>
+<h2 id="早期版本的-windows">早期版本的 Windows </h2>
+<h3 id="windows-81">Windows 8.1 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 8.1 专业版</td>
+<td>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</td>
+</tr>
+<tr>
+<td>Windows 8.1 专业版 N</td>
+<td>HMCNV-VVBFX-7HMBH-CTY9B-B4FXY</td>
+</tr>
+<tr>
+<td>Windows 8.1 企业版</td>
+<td>MHF9N-XY6XB-WVXMC-BTDCT-MKKG7</td>
+</tr>
+<tr>
+<td>Windows 8.1 企业版 N</td>
+<td>TT4HM-HN7YT-62K67-RGRQJ-JFFXW</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-8">Windows 8 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 8 专业版</td>
+<td>NG4HW-VH26C-733KW-K6F98-J8CK4</td>
+</tr>
+<tr>
+<td>Windows 8 专业版 N</td>
+<td>XCVCF-2NXM9-723PB-MHCB7-2RYQQ</td>
+</tr>
+<tr>
+<td>Windows 8 企业版</td>
+<td>32JNW-9KQ84-P47T8-D8GGY-CWCK7</td>
+</tr>
+<tr>
+<td>Windows 8 企业版 N</td>
+<td>JMNMF-RHW7P-DMY6X-RF3DR-X2BQT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-7">Windows 7 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 7 专业版</td>
+<td>FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</td>
+</tr>
+<tr>
+<td>Windows 7 专业版 N</td>
+<td>MRPKT-YTG23-K7D7T-X2JMM-QY7MG</td>
+</tr>
+<tr>
+<td>Windows 7 专业版 E</td>
+<td>W82YF-2Q76Y-63HXB-FGJG9-GF7QX</td>
+</tr>
+<tr>
+<td>Windows 7 企业版</td>
+<td>33PXH-7Y6KF-2VJC9-XBBR8-HVTHH</td>
+</tr>
+<tr>
+<td>Windows 7 企业版 N</td>
+<td>YDRBP-3D83W-TY26F-D46B2-XCKRJ</td>
+</tr>
+<tr>
+<td>Windows 7 企业版 E</td>
+<td>C29WB-22CC8-VJ326-GHFJW-H9DH4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-vista">Windows Vista </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Vista 商用版</td>
+<td>YFKBB-PQJJV-G996G-VWGXY-2V3X8</td>
+</tr>
+<tr>
+<td>Windows Vista 商用版 N</td>
+<td>HMBQG-8H2RH-C77VX-27R82-VMQBT</td>
+</tr>
+<tr>
+<td>Windows Vista 企业版</td>
+<td>VKK3X-68KWM-X2YGT-QR4M6-4BWMV</td>
+</tr>
+<tr>
+<td>Windows Vista 企业版 N</td>
+<td>VTC42-BM838-43QHV-84HX6-XJXKV</td>
+</tr>
+</tbody>
+</table>
+<h2 id="早期版本的-windows-server">早期版本的 Windows Server </h2>
+<h3 id="windows-server-版本-1803">Windows Server 版本 1803 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server Datacenter</td>
+<td>2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG</td>
+</tr>
+<tr>
+<td>Windows Server Standard</td>
+<td>PTXN8-JFHJM-4WC78-MPCBR-9W4KR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-server-版本-1709">Windows Server 版本 1709 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server Datacenter</td>
+<td>6Y6KB-N82V8-D8CQV-23MJW-BWTG6</td>
+</tr>
+<tr>
+<td>Windows Server Standard</td>
+<td>DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-server-2012-r2">Windows Server 2012 R2 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=Windows Server 2012 R2 Standard</td>
+<td>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Datacenter</td>
+<td>W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Essentials</td>
+<td>KNC87-3J2TX-XB4WP-VCPJV-M4FWM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-server-2012">Windows Server 2012 </h2>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2012</td>
+<td>BN3D2-R7TKB-3YPBD-8DRP2-27GG4</td>
+</tr>
+<tr>
+<td>Windows Server 2012 N</td>
+<td>8N2M2-HWPGY-7PGT9-HGDD8-GVGGY</td>
+</tr>
+<tr>
+<td>Windows Server 2012 单语言版</td>
+<td>2WN2H-YGCQR-KFX6K-CD6TF-84YXQ</td>
+</tr>
+<tr>
+<td>Windows Server 2012 特定国家/地区版</td>
+<td>4K36P-JN4VD-GDC6V-KDT89-DYFKP</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Standard</td>
+<td>XC9B7-NBPP2-83J2H-RHMBY-92BT4</td>
+</tr>
+<tr>
+<td>Windows Server 2012 MultiPoint 标准版</td>
+<td>HM7DN-YVMH3-46JC3-XYTG7-CYQJJ</td>
+</tr>
+<tr>
+<td>Windows Server 2012 MultiPoint 高级版</td>
+<td>XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Datacenter</td>
+<td>48HP8-DN98B-MYWDG-T2DCC-8W83P</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Essentials</td>
+<td>HTDQM-NBMMG-KGYDT-2DTKT-J2MPV</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-server-2008-r2">Windows Server 2008 R2 </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2008 R2 Web 版</td>
+<td>6TPJF-RBVHG-WBW2R-86QPH-6RTM4</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 HPC 版</td>
+<td>TT8MH-CG224-D3D7Q-498W2-9QCTX</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 标准版</td>
+<td>YC6KT-GKW9T-YTKYR-T4X34-R7VHC</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 企业版</td>
+<td>489J6-VHDMP-X63PK-3K798-CPX3Y</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 Datacenter</td>
+<td>74YFP-3QFB3-KQT8W-PMXWJ-7M648</td>
+</tr>
+<tr>
+<td>面向基于 Itanium 系统的 Windows Server 2008 R2</td>
+<td>GT63C-RJFQ3-4GMB6-BRFB9-CB83V</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-2008-server">Windows 2008 Server </h3>
+<table>
+<thead>
+<tr>
+<th>操作系统版本</th>
+<th>KMS 客户端产品密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Web Server 2008</td>
+<td>WYR28-R7TFJ-3X2YQ-YCY4H-M249D</td>
+</tr>
+<tr>
+<td>Windows Server 2008 标准版</td>
+<td>TM24T-X9RMF-VWXK6-X8JC9-BFGM2</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 标准版</td>
+<td>W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ</td>
+</tr>
+<tr>
+<td>Windows Server 2008 企业版</td>
+<td>YQGMW-MPWTJ-34KDK-48M3W-X4Q6V</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 企业版</td>
+<td>39BXF-X8Q23-P2WWT-38T2F-G3FPG</td>
+</tr>
+<tr>
+<td>Windows Server 2008 HPC</td>
+<td>RCTX3-KWVHP-BR6TB-RB6DM-6X7HP</td>
+</tr>
+<tr>
+<td>Windows Server 2008 Datacenter</td>
+<td>7M67G-PC374-GR742-YH8V4-TCBY3</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 数据中心版</td>
+<td>22XQ2-VRXRG-P8D42-K34TD-G3QQC</td>
+</tr>
+<tr>
+<td>面向基于 Itanium 系统的 Windows Server 2008</td>
+<td>4DWFP-JF3DJ-B7DTH-78FJB-PDRHK</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
